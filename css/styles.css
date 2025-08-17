@@ -1,0 +1,154 @@
+    body, html {
+        margin: 0;
+        padding: 0 ;
+    }
+
+
+
+    section {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    .hero {
+        width: 100%;
+        height: 90vh;
+        position: relative;
+    }
+
+
+
+    .hero__video {
+        width: 100%;
+        height: 90%;
+        top: 0;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(60%);
+    }
+
+    .hero__header {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        background-color: rgb(0 0 0 / 0.2);
+        width: 100vw;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero__header::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        top: 100%;
+        position: absolute ;
+    }
+
+    .hero__nav {
+        height: 15vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-grow: 1;
+    }
+
+    .hero__nav a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .hero__icon {
+        width: 90px;
+        height: 80%;
+    }   
+
+    .hero__content {
+        position: absolute;
+        width: 100%;
+        height: 75vh;
+        top: 16vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero__main_buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 200px;
+        bottom: 100px;
+        position: absolute;
+    }
+
+    .hero__button {
+        background: transparent;
+        font-size: 1rem;
+        font-weight: bold;
+        color: rgb(255 255 255);
+        width: 200px;
+        height: 50px;
+    } 
+
+    .hero__main_icon {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+    }
+
+    .presentation {
+        display: flex;
+
+    }
+
+    .presentation__information {
+
+        width: 40%;
+        padding: 5%;
+
+        & h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    }
+
+    .presentation__gallery {
+        display: grid;
+        width: 60%;
+        gap: 5px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        & img {
+            height: 70%%;
+            width: 100%; 
+            border-radius: 15px;
+
+        } 
+
+        & .presentation__img1 {
+            grid-column: span 2;
+        }
+
+        & .presentation__img4 {
+            grid-row: span 2;
+        }
+
+        & .presentation__img5 {
+            grid-column: span 2;
+        }
+
+        & .presentation__img6 {
+            grid-column: span 2;
+        }
+
+
+    }
+
+
