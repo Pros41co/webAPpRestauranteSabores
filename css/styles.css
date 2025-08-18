@@ -232,6 +232,10 @@ section {
 
 }
 
+.form__card p {
+    text-align: center;
+}
+
 .form__card {
     width: 30vw;
     margin: 10px;
@@ -262,6 +266,12 @@ section {
     width: 60%;
     border-radius: 15px;
     font-weight: bold;
+}
+
+.form__map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Iconos del formulario*/
