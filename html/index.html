@@ -107,6 +107,36 @@
             </div>
         </section>
 
+        <section class="form">
+            <div class="form__container">
+                <form
+                action="http://localhost:800/api/reservas"
+                method="POST"
+                class="form__card"
+                >
+                    <h3>Mesa</h3>
+                    <div class="form__field">
+                        <span class="form__icon">Icono Plato</span>
+                        <input type="number" name="personas" placeholder="N Personas" required min="1">
+                    </div>
+                                        <div class="form__field">
+                        <span class="form__icon">Icono Calendar</span>
+                        <input type="date" name="fecha" required>
+                    </div>
+                    <div class="form__field">
+                        <span class="form__icon">Icono Time</span>
+                        <input type="time" name="personas" required>
+                    </div>
+
+                    <button type="submit" class="form__button">Reservar</button>
+                </form>
+
+                <iframe src="https://maps.app.goo.gl/zrRpF3xd4MgGBzME7" frameborder="0" loading="lazy" class="form__map"></iframe>
+
+
+            </div>
+        </section>
+
 
     </main>
 </body>
