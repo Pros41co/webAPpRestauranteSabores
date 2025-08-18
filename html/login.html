@@ -3,26 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
     <title>Login - Sabores del Bosque</title>
 </head>
 <body>
     <main>
-        <div class="container">
-            <h1></h1>
-            <form action="" class="login">
-                <div class="login__field">
-                    <p>User</p>
-                    <input type="text">
-                </div>
-                <div class="login__field">
-                    <p>Password</p>
-                    <input type="text">
-                </div>
-                <button>Login</button>
-            </form>
+        <div class="container vh-100 d-flex justify-content-center align-items-center">
+            <div class="col-md-4">
+                <h1 class="text-center mb-4">Login para el resturante: Sabores del Bosque</h1>
+                <div class="row d-flex justify-content-center align-items-center" >
+                    <form action="" class="login">
+                        <div class="mb-3 d-flex align-items-center flex-column">
+                            <label class="form-label">User</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3 d-flex align-items-center flex-column">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-sm">Login</button>
+                        </div>
+                </form>
 
-            <button>Registrarse</button>
-            <a href="">Olvidaste tu contraseña</a>
+                <div class="text-center mb-3">
+                    <button class="btn btn-secundary btn-sm">Registrarse</button>
+                    <a href="#" class="d-block mt-2">Olvidaste tu contraseña</a>
+                </div>
+
+            </div>
+
         </div>
     </main>
 </body>
