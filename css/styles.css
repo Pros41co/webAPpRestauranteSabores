@@ -1,5 +1,6 @@
 :root {
     --background-color: white;
+    --border-color-form: black;
 }
 
 /* Reseto de estilos*/
@@ -215,6 +216,37 @@ section {
         height: 400px;
         border-radius: 30px;
     }
+}
+
+.form__container {
+    display: flex;
+}
+
+
+
+.form__card h3 {
+    text-align: center;
+
+}
+
+.form__card {
+    width: 30vw;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border: 2px solid var(--border-color-form);
+    border-radius: 15px;
+    height: 60vh;
+}
+
+.form__button {
+    background-color: transparent;
+    border: 1px solid var(--border-color-form);
+    border-radius: 10px;
+
 }
 
 
