@@ -132,14 +132,17 @@ section {
 .presentation__gallery {
     display: grid;
     width: 60%;
+    height: 50vh;
     gap: 5px;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 
     & img {
-        height: 70%;
+        height: 50%;
         width: 100%; 
         border-radius: 15px;
+        object-fit: cover;
+        display: block;
 
     } 
 
@@ -158,6 +161,16 @@ section {
     & .presentation__img6 {
         grid-column: span 2;
     }
+
+    & .presentation__img7 {
+        grid-column: span 2;
+    }
+
+    & .presentation__img9 {
+        grid-row: span 2;
+    }
+
+
 }
 
 .menu {
