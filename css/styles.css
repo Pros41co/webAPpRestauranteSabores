@@ -126,50 +126,67 @@ section {
         font-size: 2rem;
         font-weight: bold;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
     }
 }
 
 .presentation__gallery {
     display: grid;
     width: 60%;
-    height: 50vh;
-    gap: 5px;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    margin: 2%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    grid-template-areas:
+        "img1 img1 img2 img3"
+        "img4 img5 img6 img6"
+        "img7 img8 img9 img9";
 
     & img {
-        height: 50%;
+        height: 100%;
         width: 100%; 
         border-radius: 15px;
         object-fit: cover;
-        display: block;
-
     } 
 
     & .presentation__img1 {
-        grid-column: span 2;
+        grid-area: img1;
+    }
+
+    & .presentation__img2 {
+        grid-area: img2;
+    }
+
+    & .presentation__img3 {
+        grid-area: img3;
     }
 
     & .presentation__img4 {
-        grid-row: span 2;
+        grid-area: img4;
     }
 
     & .presentation__img5 {
-        grid-column: span 2;
+        grid-area: img5;
     }
 
     & .presentation__img6 {
-        grid-column: span 2;
+        grid-area: img6;
     }
 
+    
     & .presentation__img7 {
-        grid-column: span 2;
+        grid-area: img7;
     }
 
+    
+    & .presentation__img8 {
+        grid-area: img8;
+    }
+
+    
     & .presentation__img9 {
-        grid-row: span 2;
+        grid-area: img9;
     }
-
 
 }
 
