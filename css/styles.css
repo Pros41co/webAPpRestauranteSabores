@@ -109,8 +109,9 @@ section {
 
 .hero__main_icon {
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
 }
 
 .presentation {
