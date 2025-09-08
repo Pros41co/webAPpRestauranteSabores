@@ -98,6 +98,7 @@
 .presentation {
     display: flex;
     background-color: var(--background-color);
+    height: 60vh;
 }
 
 .presentation__information {
