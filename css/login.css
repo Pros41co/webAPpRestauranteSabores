@@ -1,0 +1,43 @@
+@import url("./reset.css");
+
+
+.login-page {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    background-image: url('../assets/images/background1.jpeg');
+    background-size: cover;
+}
+
+.admin-card {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    padding: 5rem;
+    gap: 5px;
+}
+
+
+.admin-field {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 10px;
+    margin: 10px;
+}
+
+.admin-field label {
+    color: #e9e0cf
+}
+
+.user-options {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
