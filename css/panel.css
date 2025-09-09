@@ -1,0 +1,179 @@
+@import url('reset.css');
+
+
+.vertical-bar {
+    width: 15vw;
+    height: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid black;
+}
+
+.vertical-bar h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.vertical-bar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+}
+
+.user-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-panel {
+    display: flex;
+    border-bottom: 1px solid black;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.option-panel a {
+    text-decoration-line: none;
+    font-size: 1rem;
+    color: black;
+}
+
+.user-creation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+
+.user-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    flex-direction: column;
+}
+
+.user-table h2 {
+    display: block;
+}
+
+.edit-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none'%3E%3Cpath fill='%23000' d='m5 16l-1 4l4-1L18 9l-3-3z' opacity='0.16'/%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m5 16l-1 4l4-1L19.586 7.414a2 2 0 0 0 0-2.828l-.172-.172a2 2 0 0 0-2.828 0zM15 6l3 3m-5 11h8'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+
+.delete-icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath fill='%23000' d='M11.5 6h5a2.5 2.5 0 0 0-5 0M10 6a4 4 0 0 1 8 0h6.25a.75.75 0 0 1 0 1.5h-1.31l-1.217 14.603A4.25 4.25 0 0 1 17.488 26h-6.976a4.25 4.25 0 0 1-4.235-3.897L5.06 7.5H3.75a.75.75 0 0 1 0-1.5zm2.5 5.75a.75.75 0 0 0-1.5 0v8.5a.75.75 0 0 0 1.5 0zm3.75-.75a.75.75 0 0 0-.75.75v8.5a.75.75 0 0 0 1.5 0v-8.5a.75.75 0 0 0-.75-.75'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.user-creation form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+.user-creation form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.user-creation form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.user-creation form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76,175,80,0.3);
+    outline: none;
+}
+
+.user-creation form button,
+form input[type="submit"] {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.user-creation form button:hover,
+form input[type="submit"]:hover {
+    background: #45a049;
+}
+
+
+.user-table table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.user-table table thead tr {
+    background-color: #4CAF50; /* verde para encabezado */
+    color: #ffffff;
+    text-align: left;
+}
+
+.user-table table th,
+table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.user-table table tbody tr:nth-child(even) {
+    background-color: #f3f3f3; /* filas pares gris claro */
+}
+
+.user-table table tbody tr:hover {
+    background-color: #f1f1f1; /* hover sutil */
+}
