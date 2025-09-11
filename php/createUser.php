@@ -1,31 +1,40 @@
 <?php
+include 'connection.php';
+include 'duplicateValidation.php';
 
-include('connection.php');
 
-$id = null;
-$name = $_POST['user-name'];
-$lastName = $_POST['user-lastname'];
-$email = $_POST['user-email'];
-$identification = $_POST['user-identification'];
-$rol = $_POST['user-rol'];
-$password = $_POST['user-password'];
+if (isset($_POST['createBtn'])) {
+    // Obtención de datos para el nuevo usuario.
+    $id = null;
+    $name = $_POST['user-name'];
+    $lastName = $_POST['user-lastname'];
+    $username = $_POST['user-username'];
+    $email = $_POST['user-email'];
+    $identification = $_POST['user-identification'];
+    $rol = $_POST['user-rol'];
+    $password = $_POST['user-password'];
 
-$validationDuplicatesQuery = "SELECT id FROM users WHERE identification = '$identification'";
+    $hash = password_hash($password, PASSWORD_BCRYPT);
 
-$insertUserQuery = "INSERT INTO users(id, name, lastname, email, rol, password, identification) VALUES ('$id', '$name', '$lastName', '$email', '$rol', '$password', '$identification')";
+    
+    $statement = $connection->prepare("INSERT INTO users(name, lastname, username, email, id_rol, password, identification) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-$result = $connection->query($validationDuplicatesQuery);
+    $statement->bind_param("ssssiss", $name, $lastName, $username, $email, $rol, $hash, $identification);
 
-if ($result->num_rows > 0) {
-    echo "Usuario previamente registrado";
-} else {
-    $resultInsert = $connection->query($insertUserQuery);
-
-    if ($resultInsert) {
-        header("Location: panel.php");
+    if (IsDuplicate($identification)) {
+        echo "<div>Usuario previamente registrado<div>";
+        exit;
+    } else {
+        if ($statement->execute()) {
+            header("Location: panel.php");
+            exit;
+        } else {
+            echo "<div>Error: " . $statement->error . "</div>";
+            exit;
+        }
     };
+}
 
-};
 
 
 ?>
