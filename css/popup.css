@@ -1,0 +1,91 @@
+.popup-email {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0 0 0 / 0.7);
+    z-index: 998;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-reservartion {
+    border-radius: 15px;
+    background-image: url("../assets/images/loginBackground.png");
+    background-size: cover;
+    width: 60vw;
+    height: 50vh;
+
+    display: flex;
+    align-items: center;
+
+    text-align: center;
+}
+
+.form-icon {
+    width: 98%;
+    height: 100%;
+}
+
+.form-icon img {
+    width: 40%;
+    height: 50%;
+}
+
+.form-reservation-login {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.form-reservation--title {
+    padding: 0rem 2rem;
+    color: #EFE5D5;
+}
+
+.reservation-field {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 2rem;
+    align-items: baseline;
+}
+
+.reservation-field input {
+    background-color: #215154;
+    height: 2rem;
+    border: none;
+    color: white;
+
+    border-radius: 2rem;
+    width: 70%;
+}
+
+.reservation-field label {
+    color: white;
+}
+
+.reservation-buttons {
+    padding: 1rem;
+}
+
+.reservation-buttons button {
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.reservation-btn.reservar {
+    background-color: #215154;;
+    color: white;
+}
+
+.reservation-btn.cancelar {
+    background-color: rgb(128, 87, 40);
+    color: white;
+}

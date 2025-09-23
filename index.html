@@ -24,6 +24,46 @@
 
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/popup.css">
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const popup = document.getElementById("email-popup");
+        const btnClose = document.getElementById("btn-reservation-close");
+        const btnOpen = document.getElementById("btn-reservation-open");
+
+        const inputPersonas = document.getElementById("input-personas");
+        const inputFecha = document.getElementById("input-fecha");
+        const inputHora = document.getElementById("input-hora");
+        
+        const reservationPersonas = document.getElementById("user-personas-re");
+        const reservationFecha = document.getElementById("user-fecha-re");
+        const reservationHora = document.getElementById("user-hora-re");
+
+        if (btnOpen) {
+            btnOpen.addEventListener("click", (e) => {
+                e.preventDefault(); 
+                
+
+                reservationPersonas.value = inputPersonas.value;
+                reservationFecha.value = inputFecha.value;
+                reservationHora.value = inputHora.value;
+
+                popup.style.display = "flex";
+
+            });
+        }
+
+        if (btnClose) {
+            btnClose.addEventListener("click", (e) => {
+                e.preventDefault(); 
+                popup.style.display = "none";
+            });
+        }
+    });
+    </script>
+
+
     <title>Sabores del Bosque</title>
 </head>
 <body>
@@ -120,11 +160,7 @@
 
         <section class="form" id="reservas">
             <div class="form__container">
-                <form
-                action="http://localhost:800/api/reservas"
-                method="POST"
-                class="form__card"
-                >
+                <div class="form__card">
                     <h3>Mesa</h3>
                     <p>
                         Reserva en restaurantes del bosque.
@@ -132,21 +168,20 @@
                     </p>
                     <div class="form__field">
                         <div class="material-symbols--fork-spoon"></div>
-                        <input type="number" name="personas" placeholder="N Personas" required min="1">
+                        <input type="number" name="personas" placeholder="N Personas" required min="1" id="input-personas">
                     </div>
                     <div class="form__field">
                         <div class="solar--calendar-bold"></div>
-                        <input type="date" name="fecha" required>
+                        <input type="date" name="fecha" required id="input-fecha">
                     </div>
                     <div class="form__field">
                         <div class="gravity-ui--clock"></div>
-                        <input type="time" name="personas" required>
+                        <input type="time" name="hora" required id="input-hora">
                     </div>
                     <div class="form__button">
-                        <button type="submit">Reservar</button>
+                        <button type="button" id="btn-reservation-open">Reservar</button>
                     </div>
-
-                </form>
+                </div>
                 
                 <div class="form__map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3976.611544765938!2d-74.0576886!3d4.6631495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a433607e0cd%3A0x7f49014fe7203f21!2sUniversidad%20Ean!5e0!3m2!1sen!2sco!4v1755546659626!5m2!1sen!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -154,8 +189,69 @@
                 </div>
 
             </div>
+
         </section>
 
+        <div class="popup-email" id="email-popup">
+            <div class="form-reservartion">
+                <div class="form-icon">
+                    <h3>Las mejores reservas</h3>
+                    <img src="assets/images/pageIcon.png" alt="ícono de la página para el registro">
+                </div>
+                <div class="form-reservation-login">
+                    <div class="form-reservation--title">
+                        <h3>Registro</h3>
+                        <p>Para confirmar tu reserva, es necesario que ingreses los siguientes datos.
+                            A continuación, se creará la correspondiente cuenta en donde podrás hacer
+                            el seguimiento completo a tu reserva.
+                        </p>
+                    </div>
+                    <form action="php/createReservation.php">
+                        <div class="reservation-field">
+                            <label for="">Nombre</label>
+                            <input type="text" minlength="5" name="user-name">
+                        </div>
+                        <div class="reservation-field">
+                            <label for="">Apellido</label>
+                            <input type="text" minlength="5" name="user-lastname">
+                        </div>
+                        <div class="reservation-field">
+                            <label for="">Nombre de Uuario</label name="user-username">
+                            <input type="text" minlength="8">
+                        </div>
+                        <div class="reservation-field">
+                            <label for="">Identificación</label name="user-identification">
+                            <input type="text" pattern="[0-9]+" minlength="8">
+                        </div>
+                        <div class="reservation-field">
+                            <label for="">Email</label>
+                            <input type="text" name="user-email">
+                        </div>
+                        <div class="reservation-field">
+                            <label for="">Contraseña</label>
+                            <input type="password" minlength="8" maxlength="20" name="user-paswword">
+                        </div>
+                        <input type="text" hidden  id="user-personas-re" name="user-personas">
+                        <input type="text" hidden  id="user-fecha-re" name="user-fecha">
+                        <input type="text" hidden  id="user-hora-re" name="user-hora">
+                        <input type="text" hidden value="4" name="user-rol">
+
+
+                        <div class="reservation-buttons">
+                            <button type="submit" class="reservation-btn reservar">Reservar</button>
+                            <button type="button" class="reservation-btn cancelar" id="btn-reservation-close">Cancelar</button>
+                        </div>
+                        
+                    </form>
+
+
+                </div>
+                
+            </div>
+
+        </div>
+
+        
 
     </main>
 </body>
