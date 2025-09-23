@@ -21,10 +21,10 @@ $result = $connection->query($query);
             <h1>Sabores del Bosque - Panel</h1>
             <nav>
                 <div class="option-panel">
-                    <a href="">Home</a>
+                    <a href="iventoyruPanel.php">Home</a>
                 </div>
                 <div class="option-panel">
-                    <a href="">Tables</a>
+                    <a href="iventoyruPanel.php">Inventory</a>
                 </div>
             </nav>
         </aside>
