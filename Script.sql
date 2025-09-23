@@ -22,6 +22,16 @@ create table users(
 	foreign key (id_rol) references roles(id)
 )
 
+CREATE TABLE reservas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    personas INT NOT NULL,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+	
 insert into users(name, lastname, username, email, id_rol, password, identification) values ('admin', 'admin', 'admin', 'nocorreo@correo.com', 2, '$2a$12$lgWRYDr5nILZxRMphvixV.9nfl7xqoTjd79DeRAkayCvt/aO/.GJe', '1');
 
 
