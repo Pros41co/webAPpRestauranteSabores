@@ -22,14 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($user['id_rol'] == 2) {
                 header("Location: panel.php");
+                exit();
             } else {
                 header("Location: userPanel.php");
+                exit();
             }
 
-            header("Location: panel.php");
-            exit();
         } else {
-
+            header("Location: ../html/login.html");
         }
     }
 }
