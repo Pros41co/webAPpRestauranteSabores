@@ -64,3 +64,71 @@ Brindar una **plataforma digital moderna** para el restaurante Sabores del Bosqu
 - Reservar mesas de forma rápida y sencilla.
 - Contactar fácilmente al restaurante.
 - Navegar en un entorno visual atractivo y coherente con la temática natural del lugar.
+
+# Requisitos del Sistema - Página Web Restaurante 🖥️
+
+## Requisitos Funcionales
+
+1. **Landing Page**
+   - Mostrar información general del restaurante (menú, servicios, ubicación, contacto).
+   - Galería de imágenes de los platos y servicios.
+   - Sección de "Sobre Nosotros".
+
+2. **Gestión de Usuarios**
+   - Registro de nuevos usuarios.
+   - Inicio y cierre de sesión.
+   - Actualización de información de usuario.
+   - Eliminación de cuentas de usuario.
+
+3. **Gestión de Reservas**
+   - Creación de reservas en línea por parte de los clientes.
+   - Consulta del historial de reservas.
+   - Actualización y cancelación de reservas.
+
+4. **Gestión de Inventario (para administración)**
+   - Registro de productos e insumos del restaurante.
+   - Actualización de existencias.
+   - Generación de alertas cuando el inventario esté bajo.
+
+5. **Panel de Administración**
+   - Acceso restringido a personal autorizado.
+   - Visualización de usuarios registrados.
+   - Gestión de reservas de clientes.
+   - Gestión de inventarios.
+
+6. **Contacto**
+   - Formulario de contacto para consultas.
+   - Información de ubicación y medios de comunicación.
+
+---
+
+## Requisitos No Funcionales
+
+1. **Usabilidad**
+   - Interfaz clara e intuitiva para clientes y administradores.
+   - Diseño adaptable (responsive) a dispositivos móviles y de escritorio.
+
+2. **Seguridad**
+   - Validación de datos en formularios.
+   - Encriptación de contraseñas en la base de datos.
+   - Control de acceso según roles (cliente/administrador).
+
+3. **Rendimiento**
+   - Carga rápida de páginas (< 3 segundos).
+   - Optimización de imágenes y recursos estáticos.
+
+4. **Escalabilidad**
+   - Posibilidad de ampliar el sistema para incluir más módulos (delivery, facturación, etc.).
+
+5. **Disponibilidad**
+   - El sistema debe estar disponible al menos el 99% del tiempo.
+   - Manejo de errores y mensajes claros al usuario.
+
+6. **Mantenibilidad**
+   - Código organizado por módulos (HTML, CSS, PHP).
+   - Documentación básica del sistema (README, comentarios en código).
+
+7. **Compatibilidad**
+   - Soporte para navegadores principales (Chrome, Firefox, Edge).
+   - Correcto funcionamiento en dispositivos móviles, tablets y PCs.
+
