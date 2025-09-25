@@ -1,11 +1,17 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include 'connection.php';
 include 'duplicateValidation.php';
+include 'sendReservation.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $id = null;
     $name = $_POST['user-name'];
-    $lastName = $_POST['user-lastname'];
+    $lastname = $_POST['user-lastname'];
     $username = $_POST['user-username'];
     $email = $_POST['user-email'];
     $identification = $_POST['user-identification'];
@@ -18,44 +24,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $hash = password_hash($password, PASSWORD_BCRYPT);
 
-    $connection->begin_transaction(); 
+    if (!IsDuplicate($id)) {
+        $statement = $connection->prepare("INSERT INTO users(name, lastname, username, email, id_rol, password, identification) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $statement->bind_param("ssssiss", $name, $lastname, $username, $email, $rol, $hash, $identification);
 
-    try {
+        if ($statement->execute()) {
+            $id_user = $connection->insert_id;
+            
+            $statement = $connection->prepare("INSERT INTO reservas(user_id, personas, fecha, hora) VALUES (?, ?, ?, ?)");
+            $statement->bind_param("iiss", $id_user, $personas, $fecha, $hora);
 
-        if (IsDuplicate($identification)) {
-            echo "<div>Usuario previamente registrado<div>";
-            exit;
+            if ($statement->execute()) {
+                //header("Location: ../index.html");
+                sendEmail($username, $fecha, "now", $personas); 
+                exit();
+            } else {
+                echo "Error al crear la reserva.";
+                exit();
+            }
+
+        }else {
+            echo "Error al crear el usuario";
+            exit();
         }
 
-        $statement = $connection->prepare(
-            "INSERT INTO users(name, lastname, username, email, id_rol, password, identification) 
-             VALUES (?, ?, ?, ?, ?, ?, ?)"
-        );
-        $statement->bind_param("ssssiss", $name, $lastName, $username, $email, $rol, $hash, $identification);
-
-        if (!$statement->execute()) {
-            throw new Exception("Error al crear usuario: " . $statement->error);
-        }
-
-        $user_id = $connection->insert_id; 
-
-        $stmtReserva = $connection->prepare(
-            "INSERT INTO reservas(user_id, personas, fecha, hora) VALUES (?, ?, ?, ?)"
-        );
-        $stmtReserva->bind_param("iiss", $user_id, $personas, $fecha, $hora);
-
-        if (!$stmtReserva->execute()) {
-            throw new Exception("Error al crear reserva: " . $stmtReserva->error);
-        }
-
-        $connection->commit();
-
-        header("Location: panel.php");
-        exit;
-
-    } catch (Exception $e) {
-        $connection->rollback(); 
-        echo "<div>Error: " . $e->getMessage() . "</div>";
+    } else {
+        echo "Usuario duplicado";
     }
+
 }
-?>
+
+    

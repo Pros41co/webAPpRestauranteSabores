@@ -1,10 +1,10 @@
 <?php
 
 
-$databaseServer = "192.168.0.16";
+$databaseServer = "127.0.0.1";
 $databaseName = "restaurantephp";
-$databasePassword = "111";
-$databaseUser = "alex";
+$databasePassword = "";
+$databaseUser = "root";
 
 $connection = mysqli_connect($databaseServer,$databaseUser,$databasePassword,$databaseName);
 

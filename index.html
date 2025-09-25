@@ -206,7 +206,7 @@
                             el seguimiento completo a tu reserva.
                         </p>
                     </div>
-                    <form action="php/createReservation.php">
+                    <form action="php/createReservation.php" method="post">
                         <div class="reservation-field">
                             <label for="">Nombre</label>
                             <input type="text" minlength="5" name="user-name">
@@ -216,12 +216,12 @@
                             <input type="text" minlength="5" name="user-lastname">
                         </div>
                         <div class="reservation-field">
-                            <label for="">Nombre de Uuario</label name="user-username">
-                            <input type="text" minlength="8">
+                            <label for="">Nombre de Uuario</label >
+                            <input type="text" minlength="8" name="user-username">
                         </div>
                         <div class="reservation-field">
-                            <label for="">Identificación</label name="user-identification">
-                            <input type="text" pattern="[0-9]+" minlength="8">
+                            <label for="">Identificación</label >
+                            <input type="text" pattern="[0-9]+" minlength="8" name="user-identification">
                         </div>
                         <div class="reservation-field">
                             <label for="">Email</label>
@@ -229,7 +229,7 @@
                         </div>
                         <div class="reservation-field">
                             <label for="">Contraseña</label>
-                            <input type="password" minlength="8" maxlength="20" name="user-paswword">
+                            <input type="password" minlength="8" maxlength="20" name="user-password">
                         </div>
                         <input type="text" hidden  id="user-personas-re" name="user-personas">
                         <input type="text" hidden  id="user-fecha-re" name="user-fecha">
